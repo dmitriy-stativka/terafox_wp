@@ -49,6 +49,92 @@ register_post_type('company', array(
 'supports'            => array( 'title', 'comments'  )  // 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',
 ));
 
-}
 
+
+
+register_post_type('reviews', array(
+    'labels'             => array(
+      'name'               => 'Отзывы', // Основное название типа записи
+      'singular_name'      => 'Отзывы', // отдельное название записи типа Book
+      'add_new'            => 'Добавить отзыв',
+      'add_new_item'       => 'Добавить новый отзыв',
+      'edit_item'          => 'Редактировать отзыв',
+      'new_item'           => 'Новый отзыв',
+      'view_item'          => 'Посмотреть отзыв',
+      'search_items'       => 'Найти отзыв',
+      'not_found'          => 'Не найдено',
+      'not_found_in_trash' => 'В корзине ничего не найдено',
+      'parent_item_colon'  => '',
+      'menu_name'          => 'Отзывы'
+      ),
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => true,
+    'capability_type'    => 'post',
+    'has_archive'        => false,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'            => array( 'title', 'comments'  )  // 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',
+    ));
+    
+register_post_type('generalScreen', array(
+    'labels'             => array(
+      'name'               => 'Главный экран', // Основное название типа записи
+      'singular_name'      => 'Главный экран', // отдельное название записи типа Book
+      'add_new'            => 'Добавить главный экран',
+      'add_new_item'       => 'Добавить новый главный экран',
+      'edit_item'          => 'Редактировать главный экран',
+      'new_item'           => 'Новый главный экран',
+      'view_item'          => 'Посмотреть главный экран',
+      'search_items'       => 'Найти главный экран',
+      'not_found'          => 'Не найдено',
+      'not_found_in_trash' => 'В корзине ничего не найдено',
+      'parent_item_colon'  => '',
+      'menu_name'          => 'Главный экран'
+      ),
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => true,
+    'capability_type'    => 'post',
+    'has_archive'        => false,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'            => array( 'title', 'comments'  )  // 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',
+    ));
+    
+    register_post_type('utp', array(
+        'labels'             => array(
+          'name'               => 'УТП', // Основное название типа записи
+          'singular_name'      => 'УТП', // отдельное название записи типа Book
+          'add_new'            => 'Добавить УТП',
+          'add_new_item'       => 'Добавить новое УТП',
+          'edit_item'          => 'Редактировать УТП',
+          'new_item'           => 'Новое УТП',
+          'view_item'          => 'Посмотреть УТП',
+          'search_items'       => 'Найти УТП',
+          'not_found'          => 'Не найдено',
+          'not_found_in_trash' => 'В корзине ничего не найдено',
+          'parent_item_colon'  => '',
+          'menu_name'          => 'УТП'
+          ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => false,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'            => array( 'title', 'comments'  )  // 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',
+        ));
+
+}
 ?>
