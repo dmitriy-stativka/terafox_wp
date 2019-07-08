@@ -3,16 +3,34 @@
 <main class="main">
     <div class="main-top">
         <div class="flex_container">
-            <div class="main-top-text">
-                <h1 class="main-top-title">Лучшие мангалы от производителя лучших мангалов</h1>
-                <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года. н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа</p>
-                <div class="main-top-buttons">
-                    <a class="more-button" href="#">Подробнее</a>
-                    <a class="social fb" href="#"></a>
-                    <a class="social inst" href="#"></a>
-                    <a class="social yt" href="#"></a>
-                </div>
-            </div>
+            <?php
+            $params = array(
+                'post_type' => 'generalScreen',
+                'posts_per_page' => -1,
+            );
+            $query = new WP_Query( $params );
+            ?>
+            <?php if($query->have_posts()): ?>
+                    <?php while ($query->have_posts()): $query->the_post() ?>
+                    <?php $titleH1 = get_field('title');
+                        $titleText = get_field('titleText');
+                        $linkYouTube = get_field('linkYouTube');
+                        $linkInsta = get_field('linkInsta');
+                        $linkVK = get_field('linkVK');                                    
+                    ?>
+                    <div class="main-top-text">
+                        <h1 class="main-top-title"><?php echo $titleH1; ?></h1>
+                        <p><?php echo $titleText; ?></p>
+                        <div class="main-top-buttons">
+                            <a class="more-button" href="#" onclick="$('html, body').animate({scrollTop:$('.details').offset().top}, '500', 'swing');">Подробнее</a>
+                            <a target="_blank" class="social vk" href="<?php echo $linkVK; ?>">
+                                <img src="<?php echo get_template_directory_uri(); ?>../images/vk.svg" alt=""></a>
+                            <a target="_blank" class="social inst" href="<?php echo $linkInsta; ?>"></a>
+                            <a target="_blank" class="social yt" href="<?php echo $linkYouTube; ?>"></a>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
     <!-- PRODUCTS_START -->
@@ -455,42 +473,40 @@
                 </div>
                 <div class="utp-list">
                     <div class="flex_row">
-                        <div class="flex_col-desk--1-4">
-                            <div class="utp-item">
-                                <div class="utp-icon">
-                                    <i></i>
+
+
+                    <?php
+                        $params = array(
+                            'post_type' => 'utp',
+                            'posts_per_page' => 4,
+                        );
+                        $query = new WP_Query( $params );
+                        ?>
+                        <?php if($query->have_posts()): ?>
+                                <?php while ($query->have_posts()): $query->the_post() ?>
+                                <?php $imageUTP = get_field('imageUTP');
+                                    $titleUTP = get_field('titleUTP');
+                                    $descriptionUTP = get_field('descriptionUTP');                               
+                                ?>
+                                <div class="flex_col-desk--1-4">
+                                    <div class="utp-item">
+                                        <div class="utp-icon">
+                                            <img src="<?php echo $imageUTP['url']?>" alt="">
+                                        </div>
+                                        <b class="utp-name"><?php echo $titleUTP;?></b>
+                                        <p class="utp-text"><?php echo $descriptionUTP;?></p>
+                                    </div>
                                 </div>
-                                <b class="utp-name">Отменное качество</b>
-                                <p class="utp-text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</p>
-                            </div>
-                        </div>
-                        <div class="flex_col-desk--1-4">
-                            <div class="utp-item">
-                                <div class="utp-icon">
-                                    <i></i>
-                                </div>
-                                <b class="utp-name">Отменное качество</b>
-                                <p class="utp-text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</p>
-                            </div>
-                        </div>
-                        <div class="flex_col-desk--1-4">
-                            <div class="utp-item">
-                                <div class="utp-icon">
-                                    <i></i>
-                                </div>
-                                <b class="utp-name">Отменное качество</b>
-                                <p class="utp-text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</p>
-                            </div>
-                        </div>
-                        <div class="flex_col-desk--1-4">
-                            <div class="utp-item">
-                                <div class="utp-icon">
-                                    <i></i>
-                                </div>
-                                <b class="utp-name">Отменное качество</b>
-                                <p class="utp-text">Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так.</p>
-                            </div>
-                        </div>
+                                <?php endwhile; ?>
+                        <?php endif; ?>
+
+
+
+
+
+
+                        
+                      
                     </div> 
                 </div>
             </div>
@@ -508,146 +524,49 @@
             <div class="main_gallery_wrap">
                 <div class="main_gallery_holder">
                     <div class="main_gallery">
-                        <div class="main_gallery_slide">
-                            <div class="author">
-                                <div class="author-info">
-                                    <div class="author-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>../images/author.jpg" alt="">
+                            <?php
+                        $params = array(
+                            'post_type' => 'reviews',
+                            'posts_per_page' => -1,
+                        );
+                        $query = new WP_Query( $params );
+                        ?>
+                        <?php if($query->have_posts()): ?>
+                                <?php while ($query->have_posts()): $query->the_post() ?>
+                                        <?php $imagerewiew = get_field('image_rewiew')?>
+                                        <?php $rewiewtext = get_field('review'); ?>
+                                        <?php $namerewiew = get_field('name_rewiew'); ?>
+                                        <?php $cityrewiew = get_field('city_rewiew'); ?>
+                                    <div class="main_gallery_slide">
+                                        <div class="author">
+                                            <div class="author-info">
+                                                <div class="author-image">
+                                                    <img src="<?php echo $imagerewiew['url'] ?>" alt="">
+                                                </div>
+                                                <div class="author-name">
+                                                    <b><?php echo $namerewiew; ?></b>
+                                                    <span><?php echo $cityrewiew; ?></span>
+                                                </div>
+                                            </div>
+                                            <div class="author-text">
+                                                <p><?php echo $rewiewtext; ?></p>
+                                            </div>
+                                            <div class="author-reviews">
+                                                <div class="product-star">
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                    <i></i>
+                                                </div>
+                                                <div class="author-data">
+                                                    <span><?php the_date();?></span>
+                                                </div>
+                                            </div>
+                                        </div>   
                                     </div>
-                                    <div class="author-name">
-                                        <b>Стативка Дмтрий</b>
-                                        <span>г.Харьков</span>
-                                    </div>
-                                </div>
-                                <div class="author-text">
-                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года.</p>
-                                </div>
-                                <div class="author-reviews">
-                                    <div class="product-star">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                    </div>
-                                    <div class="author-data">
-                                        <span>02.06.2019</span>
-                                    </div>
-                                </div>
-                            </div>   
-                        </div>
-                        <div class="main_gallery_slide">
-                            <div class="author">
-                                <div class="author-info">
-                                    <div class="author-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>../images/author.jpg" alt="">
-                                    </div>
-                                    <div class="author-name">
-                                        <b>Стативка Дмтрий</b>
-                                        <span>г.Харьков</span>
-                                    </div>
-                                </div>
-                                <div class="author-text">
-                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года.</p>
-                                </div>
-                                <div class="author-reviews">
-                                    <div class="product-star">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                    </div>
-                                    <div class="author-data">
-                                        <span>02.06.2019</span>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                        <div class="main_gallery_slide">
-                            <div class="author">
-                                <div class="author-info">
-                                    <div class="author-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>../images/author.jpg" alt="">
-                                    </div>
-                                    <div class="author-name">
-                                        <b>Стативка Дмтрий</b>
-                                        <span>г.Харьков</span>
-                                    </div>
-                                </div>
-                                <div class="author-text">
-                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года.</p>
-                                </div>
-                                <div class="author-reviews">
-                                    <div class="product-star">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                    </div>
-                                    <div class="author-data">
-                                        <span>02.06.2019</span>
-                                    </div>
-                                </div>
-                            </div>   
-                        </div>
-                        <div class="main_gallery_slide">
-                            <div class="author">
-                                <div class="author-info">
-                                    <div class="author-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>../images/author.jpg" alt="">
-                                    </div>
-                                    <div class="author-name">
-                                        <b>Стативка Дмтрий</b>
-                                        <span>г.Харьков</span>
-                                    </div>
-                                </div>
-                                <div class="author-text">
-                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года.</p>
-                                </div>
-                                <div class="author-reviews">
-                                    <div class="product-star">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                    </div>
-                                    <div class="author-data">
-                                        <span>02.06.2019</span>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="main_gallery_slide">
-                            <div class="author">
-                                <div class="author-info">
-                                    <div class="author-image">
-                                        <img src="<?php echo get_template_directory_uri(); ?>../images/author.jpg" alt="">
-                                    </div>
-                                    <div class="author-name">
-                                        <b>Стативка Дмтрий</b>
-                                        <span>г.Харьков</span>
-                                    </div>
-                                </div>
-                                <div class="author-text">
-                                    <p>Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года.</p>
-                                </div>
-                                <div class="author-reviews">
-                                    <div class="product-star">
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                        <i></i>
-                                    </div>
-                                    <div class="author-data">
-                                        <span>02.06.2019</span>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
+                                <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -663,7 +582,7 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo unde minima veniam quasi illum.</p>
                     <span class="title-span">Консультация</span>
                 </div>
-                <div class="call-back-form">
+                <!-- <div class="call-back-form">
                     <div class="call-back-name">
                         <span>Введите Ваше имя:</span>
                         <input type="text" placeholder="Имя">
@@ -675,7 +594,8 @@
                     <div class="main-top-buttons">
                         <a class="more-button" href="#">Заказать консультацию</a>
                     </div>
-                </div>
+                </div> -->
+                <?php echo do_shortcode("[contact-form-7 id='46' title='Contact form 1']"); ?>
             </div>
         </div>
     </div>

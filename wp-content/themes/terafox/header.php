@@ -29,16 +29,16 @@
                         <a href="#" class="header-link">Главная</a>
                     </li>
                     <li class="header-items">
-                        <a href="#" class="header-link" onclick="$('html, body').animate({scrollTop:$('.details').offset().top}, '500', 'swing');">О компании</a>
+                        <a href="javascript:;" class="header-link" onclick="$('html, body').animate({scrollTop:$('.details').offset().top}, '500', 'swing');">О компании</a>
                     </li>
                     <li class="header-items">
-                        <a href="#" class="header-link" onclick="$('html, body').animate({scrollTop:$('.all-products').offset().top}, '500', 'swing');">Продукция</a>
+                        <a href="javascript:;" class="header-link" onclick="$('html, body').animate({scrollTop:$('.all-products').offset().top}, '500', 'swing');">Продукция</a>
                     </li>
                     <li class="header-items">
-                        <a href="#" class="header-link" onclick="$('html, body').animate({scrollTop:$('.reviews').offset().top}, '500', 'swing');">Отзывы</a>
+                        <a href="javascript:;" class="header-link" onclick="$('html, body').animate({scrollTop:$('.reviews').offset().top}, '500', 'swing');">Отзывы</a>
                     </li>
                     <li class="header-items">
-                        <a href="#" class="header-link" onclick="$('html, body').animate({scrollTop:$('.call-back').offset().top}, '500', 'swing');">Контакты</a>
+                        <a href="javascript:;" class="header-link" onclick="$('html, body').animate({scrollTop:$('.call-back').offset().top}, '500', 'swing');">Контакты</a>
                     </li>
                 </ul>
             </div>
