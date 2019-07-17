@@ -47,9 +47,9 @@
                     <a class="header-info-number" href="tel:+380667896592">+38 (066) 789-65-92</a>
                     <a class="header-info-callback" href="javascript:;">Обратный звонок</a>
                 </div>
-                <div class="header-info-basket">
+                <div class="header-info-basket popup__toggle">
                     <span>Корзина</span>
-                    <i>4</i>
+                    <i><?php echo WC()->cart->get_cart_contents_count(); ?></i>
                 </div>
             </div>
         </div>

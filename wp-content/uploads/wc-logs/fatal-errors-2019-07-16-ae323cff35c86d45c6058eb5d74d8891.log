@@ -1,0 +1,18 @@
+2019-07-16T13:27:53+00:00 CRITICAL syntax error, unexpected 'public' (T_PUBLIC) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 133
+
+2019-07-16T13:28:19+00:00 CRITICAL syntax error, unexpected 'public' (T_PUBLIC) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 133
+
+2019-07-16T13:28:28+00:00 CRITICAL syntax error, unexpected 'function' (T_FUNCTION) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 133
+
+2019-07-16T13:29:17+00:00 CRITICAL syntax error, unexpected 'public' (T_PUBLIC) в C:\OSPanel\domains\terafoxwp\wp-content\themes\terafox\functions.php на строке 233
+
+2019-07-16T13:31:49+00:00 CRITICAL Cannot redeclare wpspec_show_product_description() (previously declared in C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php:58) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 59
+
+2019-07-16T13:33:20+00:00 CRITICAL Cannot redeclare wpspec_show_product_description() (previously declared in C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php:58) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 59
+
+2019-07-16T13:33:22+00:00 CRITICAL Cannot redeclare wpspec_show_product_description() (previously declared in C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php:58) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 59
+
+2019-07-16T13:33:24+00:00 CRITICAL Cannot redeclare wpspec_show_product_description() (previously declared in C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php:58) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 59
+
+2019-07-16T13:33:43+00:00 CRITICAL Cannot redeclare wpspec_show_product_description() (previously declared in C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php:57) в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\templates\content-product.php на строке 58
+

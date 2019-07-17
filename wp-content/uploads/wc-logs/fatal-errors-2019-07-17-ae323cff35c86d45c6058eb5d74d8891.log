@@ -1,0 +1,4 @@
+2019-07-17T09:28:06+00:00 CRITICAL Call to undefined function wc_setup_loop() в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php на строке 618
+
+2019-07-17T09:28:57+00:00 CRITICAL Call to undefined function wc_setup_loop() в C:\OSPanel\domains\terafoxwp\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-products.php на строке 618
+
